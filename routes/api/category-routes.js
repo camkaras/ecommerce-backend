@@ -44,29 +44,4 @@ router.post('/', async (req, res) => {
 		});
 });
 
-router.put('/:id', async (req, res) => {
-  await Category.update(req.body, {
-		where: {
-			id: req.params.id,
-		},
-	})
-  .then(cat => Category.findByPk(req.params.id))
-  .then((updatedCategory) => res.status(200).json(updatedCategory))
-  .catch((err) => {res.json(err);});
-});
-
-router.delete('/:id', async (req, res) => {
-	await Category.destroy({
-		where: {
-			id: req.params.id,
-		},
-	})
-	.then((rmvdCategory) => {
-		res.json(`category was removed succesfully`);
-	})
-	.catch((err) => {
-		res.json(err);
-	});
-});
-
 module.exports = router;
