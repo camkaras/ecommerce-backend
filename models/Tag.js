@@ -1,3 +1,4 @@
+
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
@@ -17,4 +18,4 @@ Tag.init(
   }
 );
 
-module.exports = Tag;
+module.exports = Tag
